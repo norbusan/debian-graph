@@ -22,12 +22,6 @@ and can be used as Neo4j database files.
 
 Comments and improvements are always welcome.
 
-WARNING
--------
-Running the `generate-graph` script requires considerable amount of
-memory, at the moment about 18G. Don't do it with only 16G available!
-You have been warned!
-
 Copyright
 ---------
 Copyright 2017 Norbert Preining

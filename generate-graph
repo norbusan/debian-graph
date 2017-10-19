@@ -154,6 +154,19 @@ sub generate_files {
 
   for my $sp (keys(%{$data{'source'}})) {
     my $spuuid = $data{'source'}{$sp}{'uuid'};
+    # tree of version ordered
+    my @srcvers;
+    for my $v (keys(%{$data{'source'}{$sp}})) {
+      next if ($v eq 'uuid');
+      push @srcvers, Dpkg::Version->new($v);
+    }
+    my ($a, @rest) = sort @srcvers;
+    for my $b (sort @rest) {
+      my $auid = $data{'source'}{$sp}{$a->as_string()}{'uuid'};
+      my $buid = $data{'source'}{$sp}{$b->as_string()}{'uuid'};
+      print { $fd{'next'} } "$auid,$buid\n";
+      $a = $b;
+    }
     for my $v (keys(%{$data{'source'}{$sp}})) {
       next if ($v eq 'uuid');
       my $vspuuid = $data{'source'}{$sp}{$v}{'uuid'};

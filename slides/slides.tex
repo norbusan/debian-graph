@@ -463,25 +463,25 @@
 \begin{frame}
   \frametitle{Number of entities}
   \begin{block}{Nodes}
-    suite: 28, mnt: 3510, altdeps: 8852, sp: 31889, bp: 154784, vsp:
+    suite: 28, mnt: 3510, altdeps: 8852, sp: 31889, bp: 154808, vsp:
     81567, vbp: 247419
 
     \bigskip
-    Total: 528049
+    Total: 528079
   \end{block}
 
   \begin{block}{Relations}
-    breaks:~58140, build\_conflicts:~3377,
-    build\_conflicts\_indep:~32, build\_depends:~587087,
-    build\_depends\_indep:~103097, builds:~234897, conflicts:~45402,
+    breaks:~58141, build\_conflicts:~3377,
+    build\_conflicts\_indep:~32, build\_depends:~587051,
+    build\_depends\_indep:~103097, builds:~234897, conflicts:~45424,
     contains:~358341, depends:~1843653, enhances:~6294,
-    is\_instance\_of:~328986, is\_satisfied\_by:~22516,
-    maintains:~328986, next:~162162, pre\_depends:~11998,
-    provides:~109171, recommends:~96187, replaces:~71535,
-    suggests:~117656
+    is\_instance\_of:~328986, is\_satisfied\_by:~22517,
+    maintains:~328986, next:~211840, pre\_depends:~11998,
+    provides:~109171, recommends:~96187, replaces:~71560,
+    suggests:~117655
 
     \bigskip
-    Total: 4489516
+    Total: 4539206
   \end{block}
 \end{frame}
 
@@ -512,11 +512,11 @@
   \begin{lstlisting}
 $ neo4j-import ...
 ...
-IMPORT DONE in 11s 63ms. 
+IMPORT DONE in 10s 608ms. 
 Imported:
-  528049 nodes
-  4489516 relationships
-  7540882 properties
+  528073 nodes
+  4539206 relationships
+  7540954 properties
 Peak memory usage: 521.28 MB
 \end{lstlisting}
 \end{frame}
@@ -532,11 +532,6 @@ Peak memory usage: 521.28 MB
   \item for each item generated a unique \acro{UUID}\bis
   \item generates the necessary \texttt{csv} files
   \end{itemize}
-
-  \medskip
-  \pause
-  Warning: the script needs currently about >16G of memory. Killed my
-  laptop a few times.
 \end{frame}
 
 \cutin{Sample queries}
