@@ -106,7 +106,10 @@
   \item Debian Developer since about 20 years, mainly responsible for
     \TeX\ related packages\bis
   \item Developer of \TeX\ Live, main author of \TeX\ Live Manager and
-    installer 
+    installer\bis
+    \pause
+  \item Complete beginner with graph databases ;-)
+    
   \end{itemize}
 \end{frame}
 
@@ -460,25 +463,25 @@
 \begin{frame}
   \frametitle{Number of entities}
   \begin{block}{Nodes}
-    suite: 27, mnt: 3492, altdeps: 8729, sp: 31465, bp: 145284, vsp:
-    78783, vbp: 235534
+    suite: 28, mnt: 3510, altdeps: 8852, sp: 31889, bp: 154784, vsp:
+    81567, vbp: 247419
 
     \bigskip
-    Total: 503316
+    Total: 528049
   \end{block}
 
   \begin{block}{Relations}
-    breaks:~48843, build\_conflicts:~3331,
-    build\_conflicts\_indep:~42, build\_depends:~559374,
-    build\_depends\_indep:~96780, builds:~223458, conflicts:~42956,
-    contains:~354899, depends:~1729800, enhances:~5981,
-    is\_instance\_of:~314317, is\_satisfied\_by:~22231,
-    maintains:~314317, next:~152844, pre\_depends:~12091,
-    provides:~100067, recommends:~92607, replaces:~62758,
-    suggests:~112001
+    breaks:~58140, build\_conflicts:~3377,
+    build\_conflicts\_indep:~32, build\_depends:~587087,
+    build\_depends\_indep:~103097, builds:~234897, conflicts:~45402,
+    contains:~358341, depends:~1843653, enhances:~6294,
+    is\_instance\_of:~328986, is\_satisfied\_by:~22516,
+    maintains:~328986, next:~162162, pre\_depends:~11998,
+    provides:~109171, recommends:~96187, replaces:~71535,
+    suggests:~117656
 
     \bigskip
-    Total: 4248696
+    Total: 4489516
   \end{block}
 \end{frame}
 
@@ -489,22 +492,8 @@
   \begin{itemize}
   \item \acro{UDD} has a public mirror:
     \url{public-udd-mirror.xvm.mit.edu}\bis
-  \item Postgresql DB, use \texttt{psql} to get the various tables in
-    \texttt{csv} format
+  \item Postgresql DB, use Perl, \texttt{DBI::PG} to get the various tables
   \end{itemize}
-  \begin{lstlisting}
-export PGPASSWORD='public-udd-mirror'
-psql -P pager=off --host=public-udd-mirror.xvm.mit.edu \
-  --user=public-udd-mirror udd <<'EOF'
-\pset format unaligned
-\pset fieldsep '\t'
-\pset footer off
-\o sources.csv
-select * from sources ;
-\o packages.csv
-select * from packages ;
-EOF
-\end{lstlisting}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -523,12 +512,12 @@ EOF
   \begin{lstlisting}
 $ neo4j-import ...
 ...
-IMPORT DONE in 11s 162ms. 
+IMPORT DONE in 11s 63ms. 
 Imported:
-  503316 nodes
-  4248696 relationships
-  7102164 properties
-Peak memory usage: 521.04 MB
+  528049 nodes
+  4489516 relationships
+  7540882 properties
+Peak memory usage: 521.28 MB
 \end{lstlisting}
 \end{frame}
 
@@ -546,7 +535,7 @@ Peak memory usage: 521.04 MB
 
   \medskip
   \pause
-  Warning: the script needs currently about 16G of memory. Killed my
+  Warning: the script needs currently about >16G of memory. Killed my
   laptop a few times.
 \end{frame}
 
@@ -582,7 +571,7 @@ match (BP:bp)<-[:build_depends]-(VSP:vsp)-[:builds]->
     return pkg,cntr order by -cntr
 \end{lstlisting}
 \pause
-gives: debhelper: 54938, pkg-config: 9000, dh-python: 8930
+gives: debhelper: 55438, dh-python: 9289, pkg-config: 9102
 \end{frame}
 
 \cutin{Conclusions}

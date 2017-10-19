@@ -4,3 +4,11 @@ udd-csv/
 debian-neo4j
 udd.dump*
 ddb/
+slides/slides.aux
+slides/slides.log
+slides/slides.nav
+slides/slides.out
+slides/slides.snm
+slides/slides.synctex.gz
+slides/slides.toc
+slides/slides.vrb
