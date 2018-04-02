@@ -7,8 +7,8 @@ $Data::Dumper::Indent = 1;
 $Data::Dumper::Sortkeys = 1;  # stable output
 $Data::Dumper::Purity = 1; # recursive structures must be safe
 
-my $limit = " limit 10";
-#my $limit = "";
+#my $limit = " limit 10";
+my $limit = "";
 
 my $udd = DBI->connect("DBI:Pg:dbname=udd;host=public-udd-mirror.xvm.mit.edu", "public-udd-mirror", "public-udd-mirror");
 
