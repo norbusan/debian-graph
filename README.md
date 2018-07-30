@@ -5,6 +5,12 @@ The scripts in this repository pull (some) data from the
 [Ultimate Debian Database](https://wiki.debian.org/UltimateDebianDatabase/)
 and convert them to a graph database, in particular [Neo4j](https://neo4j.com/).
 
+A detailed description of the process is available either on my blog
+([Part 1](https://www.preining.info/blog/2018/04/analysing-debian-packages-with-neo4j-part-1-debian/),
+[Part 2](https://www.preining.info/blog/2018/04/analysing-debian-packages-with-neo4j-part-2-udd-and-graph-db-schema/),
+[Part 3](https://www.preining.info/blog/2018/05/analysing-debian-packages-with-neo4j-part-3-getting-data-from-udd-into-neo4j/)),
+or [debian-package-neo4j.md](debian-package-neo4j.md).
+
 The scripts here are:
 
 - `pull-udd.pl` queries the UDD and downloads the two tables for packages
