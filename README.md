@@ -30,6 +30,6 @@ Comments and improvements are always welcome.
 
 Copyright
 ---------
-Copyright 2017 Norbert Preining
+Copyright 2017-2018 Norbert Preining
 
 License: GPL3+
